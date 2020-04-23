@@ -8,8 +8,7 @@ JSON_PATH = {'CPU': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_
              'Video Card': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/video_cards_json.json',
              'Ram': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/rams_json.json',
              'Cooler': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/coolers_json.json',
-             'Power Supply': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/cases_power_json.json',
-             'Case': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/cases_power_json.json',
+             'Power Supply and Cases': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/cases_power_json.json',
              'HDD': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/hdd_json.json',
              'DVD': '/Users/user/Desktop/Constructor/constructor_pc/parser/json_data/dvd_json.json'
              }

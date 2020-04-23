@@ -23,7 +23,7 @@ class Product(models.Model):
     )
 
     def get_absolute_url(self):
-        return urls.reverse('cpu-detail', args=[str(self.id)])
+        return urls.reverse('detail', args=[str(self.id)])
 
     def __str__(self):
-        return '{0}'.format(self.name)
+        return '{0},{1]'.format(self.name, self.price)

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <dl>
+        <dt style="font-size: 20px">Название:</dt>
+        <dd> {{ object.name }}</dd>
+        <dt style="font-size: 20px">Характеристики:</dt>
+            {% for key, value in object.characteristics.items %}
+                <dd>{{ key }}: {{ value }}</dd>
+            {% endfor %}
+        <dt style="font-size: 20px">Цена:</dt>
+        <dd>{{ object.price}}</dd>
+    </dl>
+    <input type="button" value="Назад" onclick="history.back()">
+{#    <a href='{% url 'product-list' %}'><button>Назад к списку комплектующих</button></a> |#}
+    <a href='{% url 'product-list' %}'><button>В корзину</button></a>
+{% endblock %}
