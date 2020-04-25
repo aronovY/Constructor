@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div align="center">
+            <ul>
+                <li>
+                    <a href="{% url 'product-list' category=1 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Процессоры</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=2 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Материнкие платы</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=3 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Видеокарты</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=4 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Оперативная память</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=5 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Система охлаждения</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=6 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Жесткие диски</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=7 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">DVD приводы</button></a>
+                </li>
+                <li>
+                    <a href="{% url 'product-list' category=8 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Системные блоки и блоки питания</button></a>
+                </li>
+{#
+           </ul>
+{#         </form>#}
+</div>
+{% endblock %}
