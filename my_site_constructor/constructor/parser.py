@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import http
+
+import random
 import requests
 from bs4 import BeautifulSoup
 
@@ -21,6 +23,7 @@ DICT_OF_URLS = {
         'DVD': 'https://ram.by/parts/dvd.html?page=',
         'CASES POWER': 'https://ram.by/parts/cases-and-power-supply.html?page='
 }
+
 
 LAST_PAGES = {
     'CPU': 30,
@@ -44,10 +47,10 @@ HEADERS = {
 
 def get_photo(img, name, category):
     p = requests.get(img)
-    out = open(f"constructor/templates/static/img/{category}/{str(name.replace(' ', '').replace('/', ''))}.jpg", 'wb')
+    out = open(f"constructor/static/media/img/{category}/{name}.jpg", 'wb')
     out.write(p.content)
     out.close()
-    return f"static/img/{category}/{str(name.replace(' ', '').replace('/', ''))}.jpg"
+    return f"img/{category}/{name}.jpg"
 
 
 def replace_all(text, dic):
@@ -85,14 +88,14 @@ def get_content_data(html, category):
         if description.find('a') is None:
             break
 
-        link_characteristic = description.find('a')['href']  # or item.find('a').get('href')
+        link_characteristic = description.find('a')['href']
         html_cpu = get_html(str(link_characteristic))
 
         if html_cpu.status_code == http.HTTPStatus.OK:
             name_of_characteristics = []
             description_of_characteristics = []
             soup_part = BeautifulSoup(html_cpu.text, 'lxml')
-            data_parts = soup_part.find_all('table')  # or soup_cpu.find_all('table', {'border': '0'})
+            data_parts = soup_part.find_all('table')
             big_photo_url = soup_part.find('div', class_='photo').find('span', class_='boxer').find('img')['src']
             for part in data_parts:
                 name_character = part.find_all('td', class_='param-name')
@@ -123,8 +126,9 @@ def get_content_data(html, category):
                 if Product.objects.filter(name=replace_all(name.find('a').text, REPL)):
                     continue
                 else:
-                    sf = get_photo(small_photo_url, replace_all(name.find('a').text, REPL), category)
-                    bf = get_photo(big_photo_url, replace_all(name.find('a').text, REPL) + '2', category)
+                    photo = Product.objects.all().count()
+                    sf = get_photo(small_photo_url, 'photo' + str(photo + 1), category)
+                    bf = get_photo(big_photo_url, 'photo' + str(photo + 1) + '(2)', category)
                     prod = Product.objects.create(
                         name=replace_all(name.find('a').text, REPL),
                         category_id=Category.objects.get(name=category).id,
@@ -156,3 +160,4 @@ def get_data_from_ram_by():
 
 
 get_data_from_ram_by()
+

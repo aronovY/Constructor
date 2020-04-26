@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-{#    <div align="center">#}
-{#        <img alt="{{ object.big_photo_link }}" src="{{ object.big_photo_link }}">#}
-{#    </div>#}
+    <article>
+        <h1 align="center">{{ object.name }}</h1>
+      </article>
+    <div align="center">
+        <img alt="Photo" src="{% static 'media/img/CPU/photo200(2).jpg' %}">
+    </div>
     <dl>
-        <dt style="font-size: 20px">Название:</dt>
-        <dd> {{ object.name }}</dd>
+{#        <dt style="font-size: 20px">Название:</dt>#}
+{#        <dd> </dd>#}
         <dt style="font-size: 20px">Характеристики:</dt>
             {% for key, value in object.characteristics.items %}
                 <dd>{{ key }}: {{ value }}</dd>
@@ -13,7 +17,6 @@
         <dt style="font-size: 20px">Цена:</dt>
         <dd>{{ object.price}}</dd>
     </dl>
-    <input type="button" value="Назад" onclick="history.back()">
-{#    <a href='{% url 'product-list' %}'><button>Назад к списку комплектующих</button></a> |#}
-    <a href='{% url 'product-list' %}'><button>В корзину</button></a>
+    <input class="navigation" style="color: #FFC0CB; width:300px; height:50px; font-size: 15px;" type="button" value="Назад" onclick="history.back()">
+    <button class="navigation" style="color: #FFC0CB; width:300px; height:50px; font-size: 15px;">В корзину</button>
 {% endblock %}

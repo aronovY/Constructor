@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+    <article>
+        <h1 align="center">Конструктор вашего персонального компьютера</h1>
+    </article>
     <div align="center">
             <ul>
                 <li>
-                    <button class='navigation' style="color: #FFC0CB; width:300px; height:100px; font-size: 20px;">НАЧАТЬ СБОРКУ ПРИ ПОМОЩИ КОНСТРУКТОРА!</button>
+                    <a href="{% url 'parts' %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:100px; font-size: 20px;">НАЧАТЬ СБОРКУ ПРИ ПОМОЩИ КОНСТРУКТОРА!</button></a>
                 </li>
                 <li>
                     <a href="{% url 'parts' %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:100px; font-size: 20px;">КАТАЛОГ КОМПЛЕКТУЮЩИХ</button></a>
