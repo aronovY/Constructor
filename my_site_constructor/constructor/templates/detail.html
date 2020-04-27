@@ -5,7 +5,7 @@
         <h1 align="center">{{ object.name }}</h1>
       </article>
     <div align="center">
-        <img alt="Photo" src="{% static 'media/img/CPU/photo200(2).jpg' %}">
+        <img alt="Photo" src="{{ object.big_photo_link.url }}">
     </div>
     <dl>
 {#        <dt style="font-size: 20px">Название:</dt>#}
