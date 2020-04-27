@@ -25,7 +25,7 @@ SECRET_KEY = '5*e6s7dg^&vvqf7p13(zu!@&@egb80_v^8353bj1@m_*xr66=)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pc_parts_db',
-        'USER': 'user',
+        'USER': 'pc_user',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
     }
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-MEDIA_DIR = os.path.join(BASE_DIR, 'static/media')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
