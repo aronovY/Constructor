@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Конструктор</title>
+    <link rel="stylesheet" href='{% static 'css/base_css.css' %}'>
+  </head>
+  <body>
+    <header>
+        <div>
+          <nav>
+              {% if user.is_authenticated %}
+                  <div>
+                        <img alt="About" src="{% static 'media/img/SITE/kompjuter2.png' %}" width="100">
+                  </div>
+                  Hello {{ user.username }}.
+                  <a href={% url 'logout' %}>
+                      <img align="right" alt="Exit" src="{% static 'media/img/SITE/iconmonstr-log-out-13-240.png' %}" width="30">
+                  </a>
+                  <a href={% url 'settings' %}>
+                      <img align="right" alt="Settings" src="{% static 'media/img/SITE/iconmonstr-gear-1-240.png' %}" width="30">
+                    </a>
+                  <a href={% url 'home' %}>
+                      <img align="right" alt="Exit" src="{% static 'media/img/SITE/iconmonstr-home-6-240.png' %}" width="30">
+                  </a>
+              {% else %}
+                  <a href="{% url 'register'%}"><button style="font-size: 14px; background-color: black; color: white; border-radius: 10px; width: 100px; height: 30px">Регистрация</button></a>
+                  <a href="{% url 'login'%}"><button style="font-size: 14px; background-color: black; color: white; border-radius: 10px; width: 100px; height: 30px">Войти</button></a>
+              {% endif %}
+          </nav>
+        </div>
+        <hr>
+    </header>
+    <main>
+        {% block content %}
+          {% endblock %}
+      <aside>
+{#        aronov92@gmail.com#}
+      </aside>
+    </main>
+    <footer>
+        <hr>
+      <p>СВЯЗЬ С РАЗРАБОТЧИКОМ:</p>
+        <a href="https://www.linkedin.com/in/aronovy/">
+            <img alt="LinkedIn" src="{% static 'media/img/SITE/iconmonstr-linkedin-3-240.png' %}" width="30">
+        </a>
+        <a href="https://github.com/aronovY">
+            <img alt="Github" src="{% static 'media/img/SITE/iconmonstr-github-1-240.png' %}" width="30">
+        </a>
+        <a href="https://www.instagram.com/bufetchik/">
+            <img alt="Instagram" src="{% static 'media/img/SITE/iconmonstr-instagram-13-240.png' %}" width="30">
+        </a>
+        <a href="https://t.me/y_aronov">
+            <img alt="Telegram " src="{% static 'media/img/SITE/iconmonstr-telegram-3-240.png' %}" width="30">
+        </a>
+        <a href="https://vk.com/y.aronov">
+            <img alt="VK" src="{% static 'media/img/SITE/iconmonstr-vk-3-240.png' %}" width="30">
+        </a>
+    </footer>
+  </body>
+</html>

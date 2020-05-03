@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <img align="right" src="{% static 'media/img/SITE/shopping109.png' %}" width="40">
+        <h1 class="constructor_pc">{{ object.name }}</h1>
+      </article>
+    <div align="center">
+        <img alt="Photo" src="{% static object.big_photo_link.url %}">
+    </div>
+    <div>
+        <dl>
+        <dt style="font-size: 20px">Характеристики:</dt>
+            {% for key, value in object.characteristics.items %}
+                <dd style="font-size: 13px">{{ key }}: {{ value }}</dd>
+            {% endfor %}
+        <dt style="font-size: 20px">Цена:</dt>
+        <dd>{{ object.price}}</dd>
+    </dl>
+    </div>
+    <div class="left">
+        <input class="auth" type="button" value="Назад" onclick="history.back()">
+    </div>
+
+{% endblock %}

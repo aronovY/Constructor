@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h1 align="center">Каталог</h1>
+    </article>
+        <table align="center">
+            <tr><td><a href="{% url 'product-list' category=1 %}"><img alt="Процессоры" src="{% static 'media/img/SITE/cpu.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=2 %}"><img alt="Материнские платы" src="{% static 'media/img/SITE/motherboard-34-693712.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=3 %}"><img alt="Видеокарты" src="{% static 'media/img/SITE/gpu.png' %}" width="125"></a></td></tr>
+            <tr><td><a href="{% url 'product-list' category=4 %}"><img alt="Оперативка" src="{% static 'media/img/SITE/ram.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=5 %}"><img alt="Куллеры" src="{% static 'media/img/SITE/blower-electric-exhaust-fan-ventilator-hardware-cooler-1-1587.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=6 %}"><img alt="Жесткие диски" src="{% static 'media/img/SITE/hdd.png' %}" width="125"></a></td></tr>
+            <tr><td><a href="{% url 'product-list' category=7 %}"><img alt="DVD" src="{% static 'media/img/SITE/dvd.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=8 %}"><img alt="Системник и блоки" src="{% static 'media/img/SITE/power-supply-source-computer-accessory-512.png' %}" width="125"></a></td></tr>
+        </table>
+{% endblock %}

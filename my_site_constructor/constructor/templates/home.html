@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+            <div class="center">
+                <ul>
+                    <li>
+                        <a href="{% url 'start-constructor' %}"><img src="{% static 'media/img/SITE/pc-computer-with-monitor_icon-icons.com_56249.png' %}" width="100"></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'start-constructor' %}"><button class="constructor">НАЧАТЬ СБОРКУ ПРИ ПОМОЩИ КОНСТРУКТОРА!</button></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{% url 'parts' %}"><img src="{% static 'media/img/SITE/iconmonstr-shop-7-240.png' %}" width="100"></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'parts' %}"><button class="constructor">КАТАЛОГ КОМПЛЕКТУЮЩИХ</button></a>
+                    </li>
+                </ul>
+            </div>
+    </article>
+{% endblock %}

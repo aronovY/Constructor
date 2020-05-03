@@ -1,0 +1,64 @@
+body {
+  padding: 0px 200px;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: "Arial", sans-serif;
+  color: black;
+  background: #ffffff url("../media/img/SITE/tic-tac-toe.png");
+}
+
+main {
+  height: 100%;
+  font-size: 18px;
+}
+
+
+
+footer{
+  font-size: 15px;
+  line-height: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+div.center{
+  text-align: center;
+}
+
+div.left{
+  text-align: left;
+}
+
+
+button.constructor{
+  height: 60px;
+  width: 450px;
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+button.navigation{
+  height: 60px;
+  width: 250px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+}
+
+input.auth{
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+button.auth{
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+}

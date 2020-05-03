@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="center">
+        <h2>Выберите оперативную память</h2>
+        {% for obj in object_list %}
+            <div style="color:black; font-size: 30px;">
+                <a href='{{ obj.get_absolute_url }}'>
+                    <img alt="Photo" src="{% static obj.small_photo_link.url %}">
+                </a>
+                <br>
+                <a href='{{ obj.get_absolute_url }}'>
+                    <button class="navigation">
+                        {{ obj.name }}
+                    </button>
+                </a>
+                <br>
+                <br>
+                {{ obj.price }} руб.
+                <a href="{% url 'choice_video' id=id component=obj.id %}"><img alt="Plus" src="{% static 'media/img/SITE/plus.png' %}" width="20"></a>
+            <hr>
+            </div>
+        {% endfor %}
+        {% include 'paginator.html' %}
+    </div>
+{% endblock %}
