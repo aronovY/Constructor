@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h2 align="center">Выберите желаймую память и производителя видеокарты</h2>
+    </article>
+        <table align="center">
+            <tr><td><img alt="Radeon" src="{% static 'media/img/SITE/radeon.png' %}" width="150"></td><td><img alt="GeForce" src="{% static 'media/img/SITE/nvidia.png' %}" width="150"></td></tr>
+            <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='2GB' %}"><button class="auth">2GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='2GB' %}"><button class="auth">2GB</button></a></td></tr>
+            <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='4GB' %}"><button class="auth">4GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='4GB' %}"><button class="auth">4GB</button></a></td></tr>
+            <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='6GB' %}"><button class="auth">6GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='6GB' %}"><button class="auth">6GB</button></a></td></tr>
+            <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='8GB' %}"><button class="auth">8GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='8GB' %}"><button class="auth">8GB</button></a></td></tr>
+            <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='All' %}"><button class="auth">ALL</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='All' %}"><button class="auth">ALL</button></a></td></tr>
+        </table>
+{% endblock %}

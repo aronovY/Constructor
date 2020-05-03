@@ -3,7 +3,6 @@
 
 import http
 
-import random
 import requests
 from bs4 import BeautifulSoup
 
@@ -45,6 +44,7 @@ HEADERS = {
 }
 
 
+# TODO: use os.path instead of fstrings
 def get_photo(img, name, category):
     p = requests.get(img)
     out = open(f"constructor/static/media/img/{category}/{name}.jpg", 'wb')
@@ -54,27 +54,24 @@ def get_photo(img, name, category):
 
 
 def replace_all(text, dic):
+    """
+    Replaces characters from `dic.keys` with `dic.values` in `text`.
+    """
     for i, to in dic.items():
         text = text.replace(i, to)
     return text.strip()
 
 
 def get_html(url, params=None):
-    """
-    We get a Response object called response. Using this object you can get all the necessary information.
-    :param url: link
-    :param params:
-    :return: Response object
-    """
     response = requests.get(url, headers=HEADERS, params=params)
     return response
 
 
 def get_content_data(html, category):
     """
-    We get the information we need from the html pages and save it in the dictionary.
-    :param html: HTML page as text
-    :param category: Category of Product
+    Receives information we need from html pages and save it to a database.
+    :param html: HTML string
+    :param category: string
     """
     soup = BeautifulSoup(html, 'lxml')
     items = soup.find_all('div', class_="item")
@@ -89,12 +86,12 @@ def get_content_data(html, category):
             break
 
         link_characteristic = description.find('a')['href']
-        html_cpu = get_html(str(link_characteristic))
+        html_page = get_html(str(link_characteristic))
 
-        if html_cpu.status_code == http.HTTPStatus.OK:
+        if html_page.status_code == http.HTTPStatus.OK:
             name_of_characteristics = []
             description_of_characteristics = []
-            soup_part = BeautifulSoup(html_cpu.text, 'lxml')
+            soup_part = BeautifulSoup(html_page.text, 'lxml')
             data_parts = soup_part.find_all('table')
             big_photo_url = soup_part.find('div', class_='photo').find('span', class_='boxer').find('img')['src']
             for part in data_parts:
@@ -139,13 +136,10 @@ def get_content_data(html, category):
                     )
                     prod.save()
         else:
-            print('Error')
+            print(html_page.status_code)
 
 
 def parse(name, url):
-    """
-    In this method we parse all links and get raw data that we convert to .json files for further work with them.
-    """
     for page in range(LAST_PAGES[name]):
         html = get_html(str(url) + str(page))
         if html.status_code == http.HTTPStatus.OK:
@@ -159,5 +153,5 @@ def get_data_from_ram_by():
         parse(key, item)
 
 
-get_data_from_ram_by()
-
+if __name__ == '__main__':
+    get_data_from_ram_by()

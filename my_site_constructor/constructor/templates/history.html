@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h2>Ваши сборки:</h2>
+        {% for obj in history_setup %}
+            <div class="left" style="font-size: 13px">
+                {{ obj.cpu.name }} | {{ obj.cpu.price }}
+                <br>
+                {{ obj.motherboard.name }} | {{ obj.motherboard.price }} руб.
+                <br>
+                {{ obj.video_card.name }} | {{ obj.video_card.price }} руб.
+                <br>
+                {{ obj.ram.name }} | {{ obj.ram.price }} руб.
+                <br>
+                {{ obj.cooler.name }} | {{ obj.cooler.price }} руб.
+                <br>
+                {{ obj.hdd.name }} | {{ obj.hdd.price }} руб.
+                <br>
+                {{ obj.power.name }} | {{ obj.power.price }} руб.
+                <br>
+                {{ obj.case.name }} | {{ obj.case.price }} руб.
+                <br>
+                {{ obj.dvd.name }} | {{ obj.dvd.price }} руб.
+            <hr>
+            </div>
+        {% endfor %}
+        <div class="left">
+            <input class="auth" type="button" value="Назад" onclick="history.back()">
+        </div>
+    </article>
+{% endblock %}

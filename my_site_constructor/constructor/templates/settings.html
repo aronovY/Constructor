@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h2>Пользователь:</h2>
+        <div class="left" style="font-size: 25px">
+            Логин: {{ user.username }}
+            <br>
+            Имя: {{ user.first_name }}
+            <br>
+            Фамилия: {{ user.second_name }}
+            <br>
+            Email: {{ user.email }}
+            <br>
+            Дата регистрации: {{ user.data_joined|date:"SHORT_DATE_FORMAT" }}
+        </div>
+        <br>
+        <div class="left">
+            <input class="auth" type="button" value="Назад" onclick="history.back()">
+            <a href="{% url 'history' %}"><button class="auth">История</button></a>
+        </div>
+    </article>
+{% endblock %}

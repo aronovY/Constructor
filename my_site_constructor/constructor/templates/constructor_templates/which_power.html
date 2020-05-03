@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h2 align="center">Выберите следующий компонент</h2>
+    </article>
+    <div class="center">
+        <a href="{% url 'seventh-component' id=id component=component %}"><img alt="Блок питания" src="{% static 'media/img/SITE/power-supply.png' %}" width="225"></a>
+        <a href="{% url 'eighth-component' id=id component=component block='False' %}"><img alt="Блок питания" src="{% static 'media/img/SITE/case.png' %}" width="225"></a>
+    </div>
+{% endblock %}

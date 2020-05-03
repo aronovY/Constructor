@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <article>
+        <h2 align="center">Ваш компьютер собран:</h2>
+    </article>
+    {% for component in components %}
+        {% if not component.name %}
+            <p> </p>
+        {% else %}
+            <div style="font-size: 20px">
+                 <a href='{{ component.get_absolute_url }}'>
+                     <img alt="Photo" src="{% static component.small_photo_link.url %}">
+                 </a>
+                <br>
+                <strong>{{ component.name }}</strong>
+                <br>
+                {{ component.price }} руб.
+            </div>
+            <br>
+            <br>
+        {% endif %}
+    {% endfor %}
+    <p style="font-size: 25px">Сумма: {{ sum }}</p>
+
+{#    <table align="center">#}
+{#        <tr><td><a href="{{ setup.cpu.get_absolute_url }}"><img alt="Photo" src="{% static setup.cpu.small_photo_link.url %}"></a><br><a href='{{ setup.cpu.get_absolute_url }}'></a><button class="navigation">{{ setup.cpu.name }}</button><br>{{ setup.cpu.price }}</td><td><a href="{{ setup.motherboard.get_absolute_url }}"><img alt="Photo" src="{% static setup.motherboard.small_photo_link.url %}"></a><br><a href='{{ setup.motherboard.get_absolute_url }}'></a><button class="navigation">{{ setup.motherboard.name }}</button><br>{{ setup.motherboard.price }}</td></tr>#}
+{#        <tr><td><a href="{{ setup.video_card.get_absolute_url }}"><img alt="Photo" src="{% static setup.video_card.small_photo_link.url %}"></a><br><a href='{{ setup.video_card.get_absolute_url }}'></a><button class="navigation">{{ setup.video_card.name }}</button><br>{{ setup.video_card.price }}</td><td><a href="{{ setup.ram.get_absolute_url }}"><img alt="Photo" src="{% static setup.ram.small_photo_link.url %}"></a><br><a href='{{ setup.ram.get_absolute_url }}'></a><button class="navigation">{{ setup.ram.name }}</button><br>{{ setup.ram.price }}</td></tr>#}
+{#        <tr><td><a href="{{ setup.cooler.get_absolute_url }}"><img alt="Photo" src="{% static setup.cooler.small_photo_link.url %}"></a><br><a href='{{ setup.cooler.get_absolute_url }}'></a><button class="navigation">{{ setup.cooler.name }}</button><br>{{ setup.cooler.price }}</td><td><a href="{{ setup.cpu.get_absolute_url }}"><img alt="Photo" src="{% static setup.hdd.small_photo_link.url %}"></a><br><a href='{{ setup.hdd.get_absolute_url }}'></a><button class="navigation">{{ setup.hdd.name }}</button><br>{{ setup.hdd.price }}</td></tr>#}
+{#        <tr><td><a href="{{ setup.power.get_absolute_url }}"><img alt="Photo" src="{% static setup.power.small_photo_link.url %}"></a><br><a href='{{ setup.power.get_absolute_url }}'></a><button class="navigation">{{ setup.power.name }}</button><br>{{ setup.power.price }}</td><td><a href="{{ setup.case.get_absolute_url }}"><img alt="Photo" src="{% static setup.case.small_photo_link.url %}"></a><br><a href='{{ setup.case.get_absolute_url }}'></a><button class="navigation">{{ setup.case.name }}</button><br>{{ setup.case.price }}</td></tr>#}
+{#        <tr><td><a href="{{ setup.dvd.get_absolute_url }}"><img alt="Photo" src="{% static setup.dvd.small_photo_link.url %}"></a><br><a href='{{ setup.dvd.get_absolute_url }}'></a><button class="navigation">{{ setup.dvd.name }}</button><br>{{ setup.dvd.price }}</td><td style="font-size: 25px">Сумма: {{ sum }}</td></tr>#}
+{#    </table>#}
+
+    <div>
+        <a href="{% url 'home'%}"><button style="font-size: 14px; background-color: black; color: white; border-radius: 10px; width: 100px; height: 30px">Сохранить</button></a>
+        <a href="{% url 'first-component' id=id manufacturer=cpu %}"><button style="font-size: 14px; background-color: black; color: white; border-radius: 10px; width: 100px; height: 30px">Пересобрать</button></a>
+    </div>
+
+{% endblock %}

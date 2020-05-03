@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action='' method='post'>
+    {% csrf_token %}
+    {% for field in form %}
+        <div style="font-size: 18px">{{ field.label_tag }} {{ field }}</div>
+        <div>
+            {% if field.errors %}
+                <div style="color: red; font-size: 10px">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+        <input class="auth" type='submit' value='register'>
+    </form>
+{% endblock %}

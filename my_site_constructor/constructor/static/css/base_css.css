@@ -1,39 +1,64 @@
 body {
-  padding: 0 30px;
-  background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
-  background-size: 0.375em 0.375em, 0.375em 0.375em, 200% 200%;
-  font-size: 14px;
-  line-height: 22px;
-  font-family: "Courier New", serif;
-  color: #FFC0CB;
+  padding: 0px 200px;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: "Arial", sans-serif;
+  color: black;
+  background: #ffffff url("../media/img/SITE/tic-tac-toe.png");
 }
 
-.navigation{
-  background: linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%), linear-gradient(45deg, #292929 25%, transparent 25%, transparent 75%, #292929 75%) 0.1875em 0.1875em, radial-gradient(at 50% 0, #484847, #090909);
-  background-size: 0.375em 0.375em, 0.375em 0.375em, 200% 200%;
+main {
+  height: 100%;
+  font-size: 18px;
+}
+
+
+
+footer{
+  font-size: 15px;
+  line-height: 10px;
 }
 
 li {
-    list-style-type: none; /* Убираем маркеры */
+  list-style-type: none;
 }
 
-h1 {
-  font-size: 30px;
-  line-height: normal;
+div.center{
+  text-align: center;
 }
 
-nav {
-  color: #888888;
+div.left{
+  text-align: left;
 }
 
-aside {
-  margin: 20px 0;
 
-  color: deepskyblue;
+button.constructor{
+  height: 60px;
+  width: 450px;
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
 }
 
-pre,
-code {
-  font-family: "Courier New", "Courier", monospace;
-  color: #6a2cce;
+button.navigation{
+  height: 60px;
+  width: 250px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+}
+
+input.auth{
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+button.auth{
+  background: black;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
 }

@@ -1,34 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
     <article>
         <h1 align="center">Каталог</h1>
     </article>
-    <div align="center">
-                <ul>
-                    <li>
-                        <a href="{% url 'product-list' category=1 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Процессоры</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=2 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Материнкие платы</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=3 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Видеокарты</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=4 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Оперативная память</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=5 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Система охлаждения</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=6 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Жесткие диски</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=7 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">DVD приводы</button></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'product-list' category=8 %}"><button class='navigation' style="color: #FFC0CB; width:300px; height:50px; font-size: 20px;">Системные блоки и блоки питания</button></a>
-                    </li>
-               </ul>
-    </div>
+        <table align="center">
+            <tr><td><a href="{% url 'product-list' category=1 %}"><img alt="Процессоры" src="{% static 'media/img/SITE/cpu.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=2 %}"><img alt="Материнские платы" src="{% static 'media/img/SITE/motherboard-34-693712.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=3 %}"><img alt="Видеокарты" src="{% static 'media/img/SITE/gpu.png' %}" width="125"></a></td></tr>
+            <tr><td><a href="{% url 'product-list' category=4 %}"><img alt="Оперативка" src="{% static 'media/img/SITE/ram.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=5 %}"><img alt="Куллеры" src="{% static 'media/img/SITE/blower-electric-exhaust-fan-ventilator-hardware-cooler-1-1587.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=6 %}"><img alt="Жесткие диски" src="{% static 'media/img/SITE/hdd.png' %}" width="125"></a></td></tr>
+            <tr><td><a href="{% url 'product-list' category=7 %}"><img alt="DVD" src="{% static 'media/img/SITE/dvd.png' %}" width="125"></a></td><td><a href="{% url 'product-list' category=8 %}"><img alt="Системник и блоки" src="{% static 'media/img/SITE/power-supply-source-computer-accessory-512.png' %}" width="125"></a></td></tr>
+        </table>
 {% endblock %}

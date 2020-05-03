@@ -1,7 +1,10 @@
 from django.contrib import admin
-from constructor.models import Product
 from django.contrib.postgres.fields import JSONField
+
+from constructor.models import Product, Setup
 from constructor.utils import ReadableJSONFormField
+
+admin.site.register(Setup)
 
 
 @admin.register(Product)

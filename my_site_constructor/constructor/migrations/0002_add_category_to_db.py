@@ -1,17 +1,17 @@
-import json
-
 from django.db import migrations
+
 from constructor import models
 
-JSON_PATH = ['CPU',
-             'MOTHERBOARDS',
-             'VIDEO CARDS',
-             'RAMS',
-             'COOLERS',
-             'HDD',
-             'DVD',
-             'CASES POWER'
-             ]
+JSON_PATH = [
+    'CPU',
+    'MOTHERBOARDS',
+    'VIDEO CARDS',
+    'RAMS',
+    'COOLERS',
+    'HDD',
+    'DVD',
+    'CASES POWER'
+]
 
 
 def add_category_to_db(apps, schema_editor):
