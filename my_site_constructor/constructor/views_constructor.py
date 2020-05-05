@@ -1,4 +1,5 @@
 import re
+from itertools import chain
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -38,6 +39,7 @@ class FirstSelectLisView(LoginRequiredMixin, generic.ListView):
 
 
 class SecondSelectLisView(LoginRequiredMixin, generic.ListView):
+    query_sets = []
     model = models.Product
     template_name = 'constructor_templates/second_component_sel.html'
     paginate_by = 10
@@ -47,14 +49,15 @@ class SecondSelectLisView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         if 'Socket' in self.component.characteristics:
             socket = self.component.characteristics['Socket']
-            return models.Product.objects\
-                .filter(category_id=2)\
-                .filter(characteristics__Socket=socket)
+            self.query_sets.append(models.Product.objects.filter(category_id=2).filter(characteristics__Socket=socket))
+            self.query_sets.append(models.Product.objects.filter(category_id=2).filter(characteristics__Сокет=socket))
+
         else:
             socket = self.component.characteristics['Сокет']
-            return models.Product.objects \
-                .filter(category_id=2)\
-                .filter(characteristics__Сокет=socket)
+            self.query_sets.append(models.Product.objects.filter(category_id=2).filter(characteristics__Socket=socket))
+            self.query_sets.append(models.Product.objects.filter(category_id=2).filter(characteristics__Сокет=socket))
+
+        return list(chain(*self.query_sets))
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -75,6 +78,7 @@ class ThirdSelectLisView(LoginRequiredMixin, generic.ListView):
     template_name = 'constructor_templates/third_component_sel.html'
     paginate_by = 10
     id_setup = int()
+    query_sets = []
     component = None
 
     def get_queryset(self):
@@ -105,7 +109,6 @@ class ThirdSelectLisView(LoginRequiredMixin, generic.ListView):
         return context_data
 
     def get(self, request, *args, **kwargs):
-        # breakpoint()
         self.id_setup = kwargs['id']
         self.component = models.Product.objects.get(id=kwargs['component'])
         setup = models.Setup.objects.get(id=self.id_setup)

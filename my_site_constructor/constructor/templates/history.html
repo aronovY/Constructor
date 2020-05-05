@@ -21,7 +21,11 @@
                 <br>
                 {{ obj.case.name }} | {{ obj.case.price }} руб.
                 <br>
-                {{ obj.dvd.name }} | {{ obj.dvd.price }} руб.
+                {% if not obj.dvd.name  %}
+
+                {% else %}
+                    {{ obj.dvd.name }} | {{ obj.dvd.price }} руб.
+                {% endif %}
             <hr>
             </div>
         {% endfor %}
