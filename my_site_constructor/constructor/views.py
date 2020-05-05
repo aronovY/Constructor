@@ -21,15 +21,16 @@ def parts_view(request):
 
 @login_required
 def settings(request):
+    history_setup = models.Setup.objects.filter(user_id=request.user.id).all()
+    for obj in history_setup:
+        if obj.video_card is None or obj.case is None:
+            obj.delete()
     return render(request, 'settings.html')
 
 
 @login_required
 def history(request):
     history_setup = models.Setup.objects.filter(user_id=request.user.id).all()
-    for obj in history_setup:
-        if obj.video_card == None or obj.case == None:
-            obj.delete()
     return render(request, 'history.html', context={'history_setup': history_setup})
 
 
