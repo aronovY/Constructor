@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
     <article>
-        <h2 align="center">Выберите желаймую память и производителя видеокарты</h2>
+        <h2 class="center">Выберите желаймую память и производителя видеокарты</h2>
     </article>
-        <table align="center">
+        <table class="center">
             <tr><td><img alt="Radeon" src="{% static 'media/img/SITE/radeon.png' %}" width="150"></td><td><img alt="GeForce" src="{% static 'media/img/SITE/nvidia.png' %}" width="150"></td></tr>
             <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='2GB' %}"><button class="auth">2GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='2GB' %}"><button class="auth">2GB</button></a></td></tr>
             <tr><td><a href="{% url 'fourth-component' id=id card='Radeon' memory='4GB' %}"><button class="auth">4GB</button></a></td><td><a href="{% url 'fourth-component' id=id card='GeForce' memory='4GB' %}"><button class="auth">4GB</button></a></td></tr>

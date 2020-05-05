@@ -17,12 +17,16 @@
                 <br>
                 {{ obj.hdd.name }} | {{ obj.hdd.price }} руб.
                 <br>
-                {{ obj.power.name }} | {{ obj.power.price }} руб.
+                {% if not obj.power.name  %}
+                    Блок питания находиться в системном блоке
+                {% else %}
+                    {{ obj.power.name }} | {{ obj.power.price }} руб.
+                {% endif %}
                 <br>
                 {{ obj.case.name }} | {{ obj.case.price }} руб.
                 <br>
                 {% if not obj.dvd.name  %}
-
+                    DVD не выбран
                 {% else %}
                     {{ obj.dvd.name }} | {{ obj.dvd.price }} руб.
                 {% endif %}

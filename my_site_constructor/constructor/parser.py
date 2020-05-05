@@ -67,6 +67,7 @@ def get_html(url, params=None):
     return response
 
 
+# TODO: Change parser algorithm
 def get_content_data(html, category):
     """
     Receives information we need from html pages and save it to a database.
