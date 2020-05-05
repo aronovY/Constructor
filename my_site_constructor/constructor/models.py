@@ -12,6 +12,7 @@ class Category(models.Model):
         return self.name
 
 
+# TODO: Change the database structure to separate components
 class Product(models.Model):
     name = models.CharField(
         max_length=300,

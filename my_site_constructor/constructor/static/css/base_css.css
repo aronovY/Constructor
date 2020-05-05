@@ -12,27 +12,29 @@ main {
   font-size: 18px;
 }
 
-
-
 footer{
   font-size: 15px;
   line-height: 10px;
 }
 
-li {
+.non_style {
   list-style-type: none;
 }
 
-div.center{
+.right{
+  text-align: right;
+}
+
+.center{
   text-align: center;
 }
 
-div.left{
+.left{
   text-align: left;
 }
 
 
-button.constructor{
+.constructor{
   height: 60px;
   width: 450px;
   background: black;
@@ -41,7 +43,7 @@ button.constructor{
   border-radius: 10px;
 }
 
-button.navigation{
+.navigation{
   height: 60px;
   width: 250px;
   background: black;
@@ -49,16 +51,10 @@ button.navigation{
   border-radius: 10px;
 }
 
-input.auth{
+.auth{
   background: black;
   color: white;
   font-size: 25px;
   border-radius: 10px;
 }
 
-button.auth{
-  background: black;
-  color: white;
-  font-size: 25px;
-  border-radius: 10px;
-}
