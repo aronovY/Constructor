@@ -39,61 +39,37 @@ This project helps to assemble the computer in a user-friendly form of a consist
         $ sudo apt-get update
         $ sudo apt-get install python3.x
         ```
-        You can invoke it with the ```$python3.x``` command.
         ---
      - Install Python 3 on Mac OS X:
-        - **First step**:
-            
-
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+        - **First step Install Homebrew**:
+            - Open the browser and go to the page http://brew.sh/. After the page has finished loading, select the boot code under Install Homebrew. Next, press Cmd + C to copy it to the clipboard. Make sure that you completely select the text of the command, as otherwise the installation will fail.
+            - Next, you need to open the **Terminal.app** window, insert the Homebrew boot code, then press Enter. After that, the Homebrew installation will begin.
+            - If you do this on a fresh version of macOS, you may receive a warning prompting you to install Apple’s developer command-line tools. This is necessary in order to complete the installation, so confirm the dialog by clicking install.
+            - We confirm the dialog *"Software was installed"* of the installation file of the developer tools;
+            - Return to the terminal, press Enter to continue the installation of Homebrew;
+            - Homebrew will ask you to enter your password to complete the installation. Enter your user password and press Enter to continue;
+            - Depending on your internet connection, Homebrew will take several minutes to download the necessary files. After the installation is complete, you will need to return to the terminal window.
+        - **Second step Install Python**:
+            - After Homebrew is installed, go back to the terminal and execute the following command:
+                ```$ brew install python3```
+            - Check whether python is installed or not with the command: 
+                ```$ python3```
+2. We need IDE for Python:
+    - I use PyCharm. You can download Pycharm from this [link](https://www.jetbrains.com/ru-ru/pycharm/download/)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python](https://www.python.org/) - Programming language.
+* [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines.
+* [Beautiful Soup 4.9.0](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Parser for parsing HTML / XML 
+* [Requests](https://requests.readthedocs.io/en/master/)
 
-## Contributing
+## Deployment
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I will describe it later
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Yura Aronov** - *Initial work* - [gYliasH](https://github.com/aronovY)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
