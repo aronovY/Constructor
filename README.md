@@ -71,5 +71,3 @@ I will describe it later
 ## Authors
 
 * **Yura Aronov** - *Initial work* - [gYliasH](https://github.com/aronovY)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
