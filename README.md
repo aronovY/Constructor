@@ -64,10 +64,6 @@ This project helps to assemble the computer in a user-friendly form of a consist
 * [Beautiful Soup 4.9.0](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Parser for parsing HTML / XML 
 * [Requests](https://requests.readthedocs.io/en/master/)
 
-## Deployment
-
-I will describe it later
-
 ## Authors
 
 * **Yura Aronov** - *Initial work* - [gYliasH](https://github.com/aronovY)
